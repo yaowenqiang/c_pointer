@@ -87,3 +87,10 @@ Temporary Items
 
 # End of https://www.gitignore.io/api/c,macos
 
+
+GPATH
+GRTAGS
+GTAGS
+include
+tags
+
