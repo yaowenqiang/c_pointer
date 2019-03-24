@@ -1,5 +1,7 @@
 /*
  * pointer.c - Calculate the square of PI 100.000.000 times
+ * gcc pisqrt.c -o pisqrt -lm  must add -lm option , otherwise the compile will fail
+ *
  *
  */
 #include <stdio.h>
