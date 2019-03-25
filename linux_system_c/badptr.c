@@ -2,6 +2,7 @@
  * badptr.c - Testing assert
  */
 #include <stdio.h>
+#define NDEBUG
 #include <stdlib.h>
 #include <assert.h>
 
