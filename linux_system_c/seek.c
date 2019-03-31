@@ -14,7 +14,7 @@
 int main(void)
 
 {
-    char ftmp[ ] = "tmpxxxxxx";
+    char ftmp[ ] = "tmpXXXXXX";
     char buf[10];
     struct stat statbuf;
     int infd, outfd;
