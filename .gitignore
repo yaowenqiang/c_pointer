@@ -5,7 +5,12 @@
 
 ### C ###
 # Prerequisites
+*
+!*.*
+!*/
+*.log
 *.d
+*.cpp
 
 # Object files
 *.o
