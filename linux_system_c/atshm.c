@@ -14,15 +14,23 @@ int main(int argc, char const* argv[])
     char *shmbuf; /* address in progress */
 
     /* Expect an segment id on the command line */
-
+/*
     if (argc != 2) {
         puts("USAGE: atshm <identifier>");
         exit(EXIT_FAILURE);
     }
+*/
+    //shmid = atoi(argv[1]);
 
-    shmid = atoi(argv[1]);
+    if ((shmid = shmget(IPC_PRIVATE, BUFSIZ, 0666)) < 0) {
+        perror("shmget");
+        exit(EXIT_FAILURE);
+    }
+    printf("%d\n", shmid);
+
+
     /* Attach the segment */
-    if ((shmbuf = shmat(shmid, 0, 0)) < (char *)0) {
+    if ((shmbuf = shmat(shmid, 0, SHM_RDONLY)) < (char *)0) {
         perror("shmat");
         exit(EXIT_FAILURE);
 
