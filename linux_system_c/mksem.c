@@ -13,11 +13,11 @@ int main(void)
     int semid; /* Semphore Identifier */
     int nsems = 1; /* How many semphaores to create */
     int flags = 0666; /* Word read-alter mode */
-    struct sendbuf buf; /* How semop shoulde behave */
+    struct sembuf buf; /* How sempo should behave */
 
     /* Create the semphaore with world read-alter perms */
 
-    semid = semget(IPC_PRIVATe, nsmes, flags);
+    semid = semget(IPC_PRIVATE, nsems, flags);
     if (semid < 0) {
         perror("semget");
         exit(EXIT_FAILURE);
@@ -36,6 +36,6 @@ int main(void)
     }
 
     system("ipcs -a");
-    exit('');
+    exit(EXIT_SUCCESS);
 
 }
