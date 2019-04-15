@@ -11,6 +11,7 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 
 unsigned short port = 8000; /* Default server port number*/
 
@@ -28,7 +29,7 @@ char * read_file(char *buf, int num_buf)
     cp = buf +5;
     cp2 = strstr(cp, " HTTP");
     if (cp2 != NULL) {
-        *cp2 = '\n';
+        *cp2 = '\0';
     }
     if (DEBUG) {
         printf("file: |%s|\n", cp);
@@ -39,6 +40,8 @@ char * read_file(char *buf, int num_buf)
         return error_return;
     }
     i = fread(ret_buf, 1 , 32768, f);
+    printf("read file return %d\n",i);
+
     if (DEBUG) {
         printf("%d bytes read from file %s\n", i, cp);
     }
@@ -137,6 +140,7 @@ int main(int argc, char * argv[])
         }
         //call a seperate work function to process request;
         cbuf = read_file(recvbuffer, totalRecieved);
+        printf("read from file :%s\n", cbuf);
         size = strlen(cbuf);
         totalSent = 0;
         do {
