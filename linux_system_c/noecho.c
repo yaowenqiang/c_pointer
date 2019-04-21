@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <termios.h>
+#include <unistd.h>
 
 #define PASS_LEN 8
 
@@ -16,14 +17,21 @@ int main(void)
     char password[PASS_LEN + 1];
     int retval;
 
+    /* Make sure stdin is a terminal */
+    if (!isatty(STDIN_FILENO)) {
+        fprintf(stderr, "Not a terminal\n");
+        exit(EXIT_FAILURE);
+    }
+
     /* Get the current terminal settings */
     tcgetattr(fileno(stdin), &old_flags);
     new_flags = old_flags;
 
     /* Turn off local echo, but apss the newlines through */
 
-    new_flags.c_lflag &= -ECHO;
-    new_flags.c_lflag |= ECHONL;
+    //new_flags.c_lflag &= -ECHO;
+    //new_flags.c_lflag |= ECHONL;
+    new_flags.c_lflag = ~ (ICANON | ECHO);
 
     /*
      * Did it work ? 
