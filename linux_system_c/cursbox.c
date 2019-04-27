@@ -25,7 +25,7 @@ int main(void)
     hline(ACS_HLINE, xmax - 2);
 
     mvaddch(0,xmax - 1, ACS_URCORNER);
-    hline(ACS_VLINE, ymax - 2);
+    vline(ACS_VLINE, ymax - 2);
 
     mvvline(1, xmax -1, ACS_VLINE, ymax -2);
     mvaddch(ymax -1, xmax -1, ACS_LRCORNER);
