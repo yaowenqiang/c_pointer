@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdio.h>
 
-// size_t SIZE_MAX
+// size_t SIZE_MAX PTRDIFF_MIN PTRDIFF_MAX
 #include <stdint.h>
 
 //double DBL_MIN, DBL_MAX
@@ -18,6 +18,9 @@
 
 
 #include <stddef.h>
+#include <math.h>
+
+
 
 int main(void)
 {
@@ -33,18 +36,18 @@ int main(void)
     signed int e = INT_MAX;
     unsigned int f = UINT_MAX;// [0, 2³² -1]
 
-    bool g = false;
+    bool g = false; 
     bool h = true;// stdbool.h
 
     //stdint.h
     //limits.h
-    ptrdiff_t i = PTRDIFF_MIN;
+    ptrdiff_t i = PTRDIFF_MIN; //[-2³¹, 2³¹ -1] or [-2⁶³, 2⁶³ -1]
     ptrdiff_t j = PTRDIFF_MAX;
 
     char k = CHAR_MIN;
     char l = CHAR_MAX;
 
-    unsigned char m = UCHAR_MAX; //[0, UCHAR_MAX]
+    unsigned char m = UCHAR_MAX; //[0, 255]
 
 
     printf("%zu\n",a);
@@ -61,6 +64,7 @@ int main(void)
 
     printf("%d\n", k);
     printf("%d\n", l);
-    printf("%s\n", m);
+    printf("%d\n", m);
+    printf("%f\n", pow(2,8));
     return 0;
 }
