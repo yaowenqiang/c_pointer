@@ -22,4 +22,8 @@ int main(void)
     printf("*%10.3e*\n", RENT);
     printf("*%+4.2f*\n", RENT);
     printf("*%010.2f*\n", RENT);
+
+    printf("%x %X %#x\n", 31,31,31);
+    printf("**%d**% d**% d**\n", 42,42, -42);
+    printf("**%5d**%5.3d**%5d**%5.3d**\n", 6,6,6,6);
 }
