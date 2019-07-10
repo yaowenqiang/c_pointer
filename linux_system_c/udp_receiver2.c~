@@ -1,0 +1,30 @@
+/*
+ * receiver2.c 
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <errno.h>
+
+int port = 6789;
+void main()
+{
+    int sin_len;
+    char message[256];
+    int socket_descriptor;
+    int bind_rc, close_rc;
+    ssize_t recv_rc;
+    printf("Waiting for data from sender\n");
+
+    /*
+     * Initialize socke address structure for Internet Protocols
+     */
+
+    bzero(&sin, sizeof(sin)); /* empty data structure */
+
+}

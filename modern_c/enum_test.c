@@ -40,13 +40,13 @@ int main(void)
     printf("%d\n", b52);
 
 
-# define  CORVID_NAME
-(char const*const[corvid_num]) {
-    [chough] = "chough",
-    [raven] = "raven",
-    [magpie] = "magpie",
-    [jay] = "jay",
-};
+# define CORVID_NAME /**/          
+(char const*const[corvid_num]) { \
+    [chough] = "chough",         \
+    [raven] = "raven",           \
+    [magpie] = "magpie",         \
+    [jay] = "jay",               \
+}
 
 for (unsigned i = 0; i < corvid_num; ++i) {
     printf("Corvid %u is the %s\n", i, CORVID_NAME[i]); //TODO

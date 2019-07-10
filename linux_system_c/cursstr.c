@@ -31,7 +31,6 @@ int main(void)
     wborder(tmpwin, 0,0,0,0,0,0,0,0);
     touchwin(tmpwin);
     wrefresh(tmpwin);
-    refresh();
     sleep(3);
     delwin(tmpwin);
 

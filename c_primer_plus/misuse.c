@@ -16,7 +16,7 @@ int imax(n, m)
     if (n > m) {
         max = n ;
     } else {
-        max = m;
+         max = m;
     }
     return max;
 }

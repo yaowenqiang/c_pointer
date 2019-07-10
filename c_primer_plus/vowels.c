@@ -1,5 +1,5 @@
 /*
- * 使用多重标签
+ * vowels.c - 使用多重标签
  */
 
 #include <stdio.h>

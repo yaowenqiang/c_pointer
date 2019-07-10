@@ -26,6 +26,7 @@ int main(void)
     box(pwin, ACS_VLINE, ACS_HLINE);
     
     mvwaddstr(pwin, 1, 1, "Password: ");
+
     noecho();
     while ((c = getch()) != '\n' && i < 80) {
         str[i++] = c;

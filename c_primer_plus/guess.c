@@ -18,8 +18,7 @@ int main(void)
         } else {
             printf("Sorry, I understand only y or n.\n");
         }
-        //while(getchar() != '\n') {
-        while(response != '\n') {
+        while(getchar() != '\n') {
             continue;
         }
     }

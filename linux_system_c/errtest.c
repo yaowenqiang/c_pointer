@@ -14,25 +14,26 @@ int main(void)
     FILE *pf;
     puts("Testing err_ret");
     if((pf = fopen("foo", "r")) == NULL) {
-        err_ret("%s %s", "err_ret:" , "failed to open fooo");
+        err_ret("%s %s", "err_ret:" , "failed to open foo");
     }
+    exit(EXIT_FAILURE);
 
     puts("Testing log_ret");
     if((pf = fopen("foo", "r")) == NULL) {
-        log_ret("errtest.log", "%s %s", "err_ret:" , "failed to open fooo");
+        log_ret("errtest.log", "%s %s", "err_ret:" , "failed to open foo");
     }
 
     #ifndef ERR_QUIT_SKOP 
     puts("Testing err_quit");
     if((pf = fopen("foo", "r")) == NULL) {
-        err_quit("errtest.log", "%s %s", "err_ret:" , "failed to open fooo");
+        err_quit("errtest.log", "%s %s", "err_ret:" , "failed to open foo");
     }
     #endif
 
     #ifndef LOG_QUIT_SKOP 
     puts("Testing log_quit");
     if((pf = fopen("foo", "r")) == NULL) {
-        log_ret("errtest.log", "%s %s", "err_ret:" , "failed to open fooo");
+        log_ret("errtest.log", "%s %s", "err_ret:" , "failed to open foo");
     }
     #endif
 }

@@ -2,7 +2,7 @@ OBJS = howdy.o helper.o
 HDRS = helper.h
 # howdy: howdy.o helper.o helper.h
 howdy: $(OBJS) $(HDRS)
-	# gcc howdy.o helper.o -o howdy
+# gcc howdy.o helper.o -o howdy
 	gcc $(OBJS) -o howdy
 helper.o: helper.c $(HDRS)
 	gcc -c helper.c
