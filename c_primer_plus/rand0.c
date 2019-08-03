@@ -2,7 +2,7 @@
  * rand0.c - 生成随机数
  * 使用ANSI C 可移植算法
  */
-
+#include <time.h>
 static unsigned long int next = 1; /* 种子 */
 
 unsigned int rand0(void)
