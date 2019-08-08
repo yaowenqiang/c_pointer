@@ -104,7 +104,7 @@ char * s_gets(char * st, int n)
     if(ret_val) {
         find = strchr(st, '\n');
         if (find) {
-            *find = '\n';
+            *find = '\0';
         } else {
             while (getchar() != '\n') {
                 continue;
