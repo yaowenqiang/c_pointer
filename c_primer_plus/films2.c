@@ -56,8 +56,10 @@ int main(void)
 
         while(current != NULL) {
             current = head;
-            head = current->next;
-            free(current);
+            if (current != NULL) {
+                head = current->next;
+                free(current);
+            }
         }
 
     }
