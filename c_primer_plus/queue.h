@@ -7,7 +7,14 @@
 
 #include <stdbool.h>
 
-typedef int Item;
+//typedef int Item;
+
+
+typedef struct item
+{
+    long arrive;
+    int processtime;
+} Item;
 //或者 typedef struct item {int gumption; int charisma; } Item;
 
 #define MAXQUEUE 10
