@@ -16,6 +16,8 @@ typedef struct  item
 
 } Item;
 
+#define MAXITEMS 10
+
 typedef struct trnode 
 {
     Item item;
@@ -31,17 +33,17 @@ typedef struct tree
 
 void InitializeTree(Tree * ptree);
 
-void TreeIsEmpty(const Tree * ptree);
+bool TreeIsEmpty(const Tree * ptree);
 
-bool treeEsFull(const Tree * ptree);
+bool TreeIsFull(const Tree * ptree);
 
 int TreeItemCount(const Tree * ptree);
 
 bool AddItem(const Item * pi, Tree * ptree);
 
-bool InTree(Item * pi, const Tree * ptree);
+bool InTree(const Item * pi, const Tree * ptree);
 
-bool deleteItem(Item * pi, Tree * ptree);
+bool DeleteItem(const Item * pi, Tree * ptree);
 
 void Traverse(const Tree * pt, void(*pfun)(Item item));
 void DeleteAll(Tree * ptree);
