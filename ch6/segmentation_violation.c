@@ -19,5 +19,13 @@ int main(void)
     printf("%d\n",d );
     printf("%d\n",b );
 
+    int aa = 12;
+    int * bb = &aa;
+    int **c = &b;
+
+
+    char ch = 'a';
+    char*cp = &ch;
+
     return 0;
 }
