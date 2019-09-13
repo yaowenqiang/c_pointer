@@ -3,18 +3,21 @@
  */
 
 #include <stdio.h>
+#include <assert.h>
 
 #define TRUE 1
 #define FALSE 0
 
 int find_char(char ** strings, char value);
+int find_char2(char ** strings, int value);
 
 
 int main(void)
 {
     char * str2[] = {"abc", "def"};
     char c = 'c'; 
-    printf("find result: %d", find_char(str2, c));
+    printf("find result: %d\n", find_char(str2, c));
+    printf("find result: %d\n", find_char2(str2, c));
     return 0;
 }
 int find_char(char ** strings, char value)
@@ -32,3 +35,16 @@ int find_char(char ** strings, char value)
     }
     return FALSE;
 }
+
+int find_char2(char ** strings, int value) 
+{
+
+    assert(*strings != NULL);
+    while (**strings != '\0') {
+        if (*(*strings)++ == value) {
+            return TRUE;
+        }
+    }
+    strings++;
+}
+
