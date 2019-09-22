@@ -3,7 +3,9 @@
 int main(void)
 {
     push(1);
-    int a = top();
+    STACK_TYPE a = top();
     printf("a = %d\n", a);
+    STACK_TYPE b =  pop();
+    printf("b = %d\n", b);
     return 0;
 }

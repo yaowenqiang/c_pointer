@@ -22,10 +22,13 @@ void push(STACK_TYPE value)
 }
 
 
-void pop(void)
+STACK_TYPE pop(void)
 {
+    STACK_TYPE temp;
     assert(!is_empty());
+    temp = stack[top_element];
     top_element -= 1;
+    return temp;
 }
 
 STACK_TYPE top(void )

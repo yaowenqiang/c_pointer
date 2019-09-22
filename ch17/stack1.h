@@ -6,7 +6,7 @@
 
 void push(STACK_TYPE value);
 
-void pop(void);
+STACK_TYPE pop(void);
 
 STACK_TYPE top(void);
 
