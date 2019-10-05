@@ -11,6 +11,7 @@
 *.log
 *.d
 *.cpp
+*.txt
 
 # Object files
 *.o
