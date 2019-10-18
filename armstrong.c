@@ -3,9 +3,9 @@
 
 int main()
 {
-    int number, originalNumer, reminder, result = 0,n = 0;
+    long long int number, originalNumer, reminder, result = 0,n = 0;
     printf("Enter an ingeter: ");
-    scanf("%d", &number);
+    scanf("%lld", &number);
     originalNumer = number;
 
     while(originalNumer > 0 ) {
@@ -23,9 +23,9 @@ int main()
 
 
     if (result == number ) {
-        printf("%d is an Armstrong number.\n",number);
+        printf("%lld is an Armstrong number.\n",number);
     } else {
-        printf("%d is not an Armstrong number.\n",number);
+        printf("%lld is not an Armstrong number.\n",number);
 
     }
 
